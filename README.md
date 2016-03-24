@@ -4,12 +4,12 @@ The goal of the project is to develop a webshop. It shall contain a
 frontend in HTML/Javascript/CSS, a backend in JavaServer Faces
 running on a Wildfly server, and a MySQL database.
 
-#Requirements
+##Requirements
 The system shall have two major modes: Customer mode and
 Administrator Mode. The requirements for each mode as well as some
 general requirements are listed below.
 
-General requirements:
+###General requirements:
 * The webshop shall contain any number of products.
 * All information about the products shall be stored in the
 database.
@@ -23,7 +23,7 @@ database.
 * The products shall be grouped into a number of pre-defined
 categories (for example games, keyboards, earphones, ...).
 
-Customer mode requirements:
+###Customer mode requirements:
 * The customer shall be able to browse the products in the
 following ways:
  * Show all available products
@@ -46,7 +46,7 @@ generated order number.
 * The customer shall be able to check the status of his/her order
 from the order number.
 
-Administrator mode requirements:
+###Administrator mode requirements:
 * The webshop shall have an Admin system where an
 administrator can log in.
 * User accounts and passwords shall be stored in the database.
