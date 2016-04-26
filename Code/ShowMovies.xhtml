@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Show Movies</title>
+    </head>
+    <body>
+        <h:form>
+            <h:dataTable value="#{movie.movies}" var="m">
+                <h:column>
+                    <f:facet name="header">Titles</f:facet>
+                    <h:commandButton value="#{m.title}" action="AddMovie" />  
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category</f:facet>
+                        #{m.category}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                        #{m.price}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                        #{m.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Stock</f:facet>
+                        #{m.stock}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </body>
+</html>

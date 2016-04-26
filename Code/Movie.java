@@ -3,116 +3,124 @@ package clickClasses;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-
+import javax.servlet.http.Part;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 @Named
 @SessionScoped
 public class Movie implements Serializable {
 
-    private static int movieID = 0;
-    private String movieTitle;
-    private String movieCategory;
-    private double moviePrice;
-    private String movieDescription;
+    private int id;
+    private String title;
+    private String category;
+    private double price;
+    private String description;
+    private int stock;
+    private Part image;
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/click_play";
-    //  Database credentials
-    static final String USER = "root";
-    static final String PASS = "babbster";
+    DBConection aConnection = new DBConection();
 
     public Movie() {
 
     }
 
-    public static int getMovieID() {
-        return movieID;
+    public int getId() {
+        return id;
     }
 
-    public static void setMovieID(int movieID) {
-        Movie.movieID = movieID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMovieTitle() {
-        return movieTitle;
+    public String getTitle() {
+
+        return title;
     }
 
-    public void setMovieTitle(String movieTitle) {
-        this.movieTitle = movieTitle;
+    public void setTitle(String title) {
+
+        this.title = title;
     }
 
-    public String getMovieCategory() {
-        return movieCategory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setMovieCategory(String movieCategory) {
-        this.movieCategory = movieCategory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public double getMoviePrice() {
-        return moviePrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setMoviePrice(double moviePrice) {
-        this.moviePrice = moviePrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public String getMovieDescription() {
-        return movieDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMovieDescription(String movieDescription) {
-        this.movieDescription = movieDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void addToMovies() {
-        //movieID++;
-
-        Connection conn = null;
-        Statement stmt = null;
-
-        try {
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
-
-            //STEP 3: Open a connection
-            System.out.println("Connecting to a selected database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            System.out.println("Connected database successfully...");
-
-            //STEP 4: Execute a query
-            System.out.println("Inserting records into the table...");
-            stmt = conn.createStatement();
-
-            String sql = "INSERT INTO movies (title, category, price, discription)"
-                    + "VALUES ('" + movieTitle + "', '" + movieCategory + "'," +moviePrice+", '"+movieDescription+"');";
-            stmt.executeUpdate(sql);
-            System.out.println("Inserted records into the table...");
-
-        } catch (SQLException se) {
-            //Handle errors for JDBC
-            se.printStackTrace();
-        } catch (Exception e) {
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        } finally {
-            //finally block used to close resources
-            try {
-                if (stmt != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            }// do nothing
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }//end finally try
-        }//end try
-        System.out.println("Movie has been added:");
+    public int getStock() {
+        return stock;
     }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Part getImage() {
+        return image;
+    }
+
+    public void setImage(Part image) {
+        this.image = image;
+    }
+
+    public void getMovie() throws SQLException {
+        aConnection.connect();
+
+        aConnection.disconnect();
+    }
+
+    public List<Movie> getMovies() throws SQLException {
+        List<Movie> result = new ArrayList<>();
+        aConnection.connect();
+        String sql = "SELECT * FROM click_play.movies";
+        aConnection.executeStatement(sql);
+        aConnection.resutSet();
+        while(aConnection.getResultSet().next()){
+            Movie movie = new Movie();
+            movie.setTitle(aConnection.getResultSet().getString(2));
+            movie.setCategory(aConnection.getResultSet().getString(3));
+            movie.setPrice(aConnection.getResultSet().getDouble(4));
+            movie.setDescription(aConnection.getResultSet().getString(5));
+            movie.setStock(aConnection.getResultSet().getInt(6));
+            result.add(movie);
+        }
+        aConnection.disconnect();
+        return result;
+    }
+
+    public void setMovie() throws SQLException {
+        aConnection.connect();
+        String sql = "INSERT INTO click_play.movies (title, category, price, description, stock, image)"
+                + "VALUES ('" + title + "', '" + category + "'," + price + ", '" + description + "' , '" + stock + "', '"+image+"');";
+        aConnection.executeStatement(sql);
+        aConnection.disconnect();
+    }
+
+    public void removeMovie() throws SQLException {
+        aConnection.connect();
+
+        aConnection.disconnect();
+    }
 }
