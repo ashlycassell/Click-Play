@@ -1,17 +1,19 @@
 package click_play;
 
-import javax.faces.bean.ManagedBean;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-@ManagedBean
 @Named
-public class Movie {
+@SessionScoped
+public class Movie implements Serializable {
 
     private int id;
     private String title;
+    private String category;
     private int stock;
     private double price;
-    private String discriptions;
+    private String description;
     // we don't know until now this field so this is a place holder
     //image img;
 
@@ -31,6 +33,14 @@ public class Movie {
         this.title = title;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public int getStock() {
         return stock;
     }
@@ -47,12 +57,12 @@ public class Movie {
         this.price = price;
     }
 
-    public String getDiscriptions() {
-        return discriptions;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscriptions(String discriptions) {
-        this.discriptions = discriptions;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }
