@@ -5,122 +5,70 @@
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <style  media="screen">
-            #btn1{
+            #btn1AM{
                 position:fixed;
                 padding: 20px;
-                width: 9em;
-                left: 10px;
-                top: 150px;
+                width: 12em;
+                left: 700px;
+                top: 500px;
             }
-            #btn2{
+            #btn2AM{
                 position:fixed;
                 padding: 20px;
-                width: 9em;
-                left: 10px;
-                top: 215px;
+                width: 12em;
+                left: 900px;
+                top: 500px;
             }
-            #btn3{
+            #btn3AM{
                 position:fixed;
                 padding: 20px;
-                width: 9em;
-                left: 10px;
-                top: 280px;
+                width: 12em;
+                left: 1100px;
+                top: 500px;
             }
-            #btnRi{
-                position:fixed;
-                padding: 20px;
-                width: 9em;
-                right:30px;
-                top: 12px;
-            }
-
-            #write{
-                position:fixed;
-                padding: 10px;
-                width: 30em;
-                right:1100px;
-                top: 12px;
-            }
-
-            #search{
-                position:fixed;
-                padding: 10px;
-                width: 5em;
-                right:1045px;
-                top: 12px;
-            }
-            #rec{
-                position:fixed;
-                right:28px;
-                top: 10px;
-            }
-            #rec1{
-                position:fixed;
-                left: 135px;
-                top: 150px;
-            }
-            #rec2{
-                position:fixed;
-                left: 135px;
-                top: 910px;
-            }
-            #pic{
-                position:fixed;
-                left:10px;
-                top: 10px;
-            }
-            #text{
-                position:fixed;
-                left:140px;
-                top: 900px;
-            }
-            #texts{
-                position:fixed;
-                left:140px;
-                top: 900px;
-            }
-            #search{
-                position:fixed;
-                padding: 10px;
-                width: 5em;
-                right:1045px;
-                top: 12px;
-            }
-            #write{
-                position:fixed;
-                padding: 10px;
-                width: 30em;
-                right:1100px;
-                top: 12px;
-            }
-
-
-
-        </style>
-        <title> Hallow World-Input Form</title>
+      #Wellcome{
+        position:fixed;
+        padding: 20px;
+        font-size: 250%;
+        left: 850px;
+        top: 140px;
+      }
+      #Wellcome2{
+        position:fixed;
+        padding: 20px;
+        font-size: 200%;
+        left: 750px;
+        top: 300px;
+      }
+      #recAM{
+        position:fixed;
+        padding: 20px;
+        width: 9em;
+        left: 450px;
+        top: 100px;
+      }
+        #picAM{
+        position:fixed;
+        left: 500px;
+        top: 150px;
+      }
+ </style>
     </h:head>
     <h:body>
-        <a href="adminMain.xhtml"><img id="pic" src="bild.jpg"  style="width:150px;height:122px;"></img></a>
-        <div id="rec" style="width:1880px;height:122px;border:2px solid #000;"></div>
-        <div id="rec1" style="width:1750px;height:750px;border:3px solid #000;"></div>
-        <div id="rec2" style="width:1750px;height:100px;border:3px solid #000;"></div>
+                 <div id="recAM" style="width:950px;height: 700px;border:3px solid #000;"></div>
+                  <a href="adminMain.xhtml"><img id="picAM" src="bild.jpg"  style="width:250px;height:250px;"></img></a>
 
 
 
+            <p  id="Wellcome"> Wellcome</p>
+            <p  id="Wellcome2">Please chose one of the options</p> 
 
+        <input id="btn2AM" type="button" Onclick="window.location.href = 'adminMod.xhtml'" 
+               value="Managing Admin"/>
+        <input id="btn3AM" type="button" onclick="window.location.href = 'All.xhtml'"
+               value="Managing Movies"/>
 
-        <input id="btnRi" type="button" Onclick="window.location.href = 'index.xhtml'"
-               value="Log Out"/>
-        <input id="btn1" type="button" Onclick="window.location.href = 'items.xhtml'"
-               value="Items"/>
-        <input id="btn2" type="button" Onclick="window.location.href = 'admin.xhtml'"
-               value="Admins"/>
-        <input id="btn3" type="button" onclick="window.location.href = 'All.xhtml'"
-               value="Orders"/>
-        <input id="search" type="button" onclick="window.location.href = 'http://www.computerhope.com/'"
-               value="search"/>
-        <input id="write" type="text" />
-
-
+        <input id="btn1AM" type="button" Onclickgories="window.location.href='adminMain.xhtml'"
+               value="Managing Orders"/>
     </h:body>
 </html> 
