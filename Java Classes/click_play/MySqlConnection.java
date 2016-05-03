@@ -1,14 +1,14 @@
-package clickClasses;
+package click_play;
 
 import java.io.Serializable;
-import java.sql.*;
-import java.util.Properties;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import java.sql.*;
+import java.util.Properties;
 
 @Named
 @SessionScoped
-public class DBConection implements Serializable{
+public class MySqlConnection implements Serializable {
 
     private static final String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306";
@@ -77,7 +77,7 @@ public class DBConection implements Serializable{
         statement = connection.prepareStatement(sql);
         statement.execute(sql);
     }
-    
+
     public void resutSet() throws SQLException {
         resultSet = statement.getResultSet();
     }
