@@ -8,9 +8,9 @@
     </h:head>
     <h:body>
         <h:form enctype="multipart/form-data">
-            Submit title: <h:inputText value="#{movie2.title}" />
+            Submit title: <h:inputText value="#{movie.title}" />
             <br></br>
-            Submit category: <h:selectOneMenu value="#{movie2.category}">
+            Submit category: <h:selectOneMenu value="#{movie.category}">
                 <f:selectItem itemLabel="Action" itemValue="Action" />
                 <f:selectItem itemLabel="Cartoon" itemValue="Cartoon" />
                 <f:selectItem itemLabel="Comedy" itemValue="Comedy" />
@@ -21,15 +21,14 @@
                 <f:selectItem itemLabel="Romance" itemValue="Romance" />
             </h:selectOneMenu>
             <br></br>
-            Submit price: <h:inputText value="#{movie2.price}" />
+            Submit price: <h:inputText value="#{movie.price}" />
             <br></br>
-            Submit description: <h:inputText value="#{movie2.description}" />
+            Submit description: <h:inputText value="#{movie.description}" />
             <br></br>
-            Submit stock: <h:inputText value="#{movie2.stock}" />
+            Submit stock: <h:inputText value="#{movie.stock}" />
             <br></br>
-            Submit image: <h:inputFile id="file" value="#{movie2.image}" />
 
-            <h:commandButton value="Submit" action="#{movie2.setMovie()}" />
+            <h:commandButton value="Submit" action="#{movie.newMovie()}" />
 
         </h:form>
     </h:body>

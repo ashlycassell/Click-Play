@@ -10,26 +10,26 @@
             <style  media="screen">
       #btn1{
         position:fixed;
-        padding: 20px;
+        padding: 10px;
         width: 9em;
-        left: 800px;
-        top: 200px;
+        left: 1000px;
+        top: 650px;
       }
       #write{
         position:fixed;
         padding: 10px;
         width: 9em;
-        left: 600px;
-        top: 200px;
+        left: 800px;
+        top: 650px;
       }
       #write1{
         position:fixed;
         padding: 10px;
         width: 9em;
-        left: 400px;
-        top: 200px;
+        left: 600px;
+        top: 650px;
       }
-      #rec{
+      #recLo{
         position:fixed;
         padding: 20px;
         width: 9em;
@@ -37,19 +37,43 @@
         top: 100px;
       }
       
-      #login{
+      #Hello{
         position:fixed;
         padding: 20px;
-        width: 9em;
-        left: 600px;
-        top: 130px;
+        font-size: 200%;
+        left: 690px;
+        top: 140px;
       }
+      #Main{
+        position:fixed;
+        padding: 20px;
+font-size: 150%;
+        left: 730px;
+        top: 240px;
+      }
+      #Please{
+        position:fixed;
+        padding: 20px;
+        left: 700px;
+        top: 550px;
+        font-size: 200%;
+      }
+      #picLo{
+        position:fixed;
+        left: 700px;
+        top: 320px;
+      }
+
     </style>
-    <p  id="login"> Log In</p>
+            <a href="adminMain.xhtml"><img id="picLo" src="bild.jpg"  style="width:250px;height:250px;"></img></a>
+
+     <p  id="Hello"> Hello To Admin</p>
+      <p  id="Main"> Main Page</p>
+       <p  id="Please"> Please Login</p>
         <title> Hallow World-Input Form</title>
     </h:head>
     <h:body>
-         <div id="rec" style="width:600px;height:200px;border:3px solid #000;"></div>
+         <div id="recLo" style="width:1000px;height: 700px;border:3px solid #000;"></div>
          
        
          
@@ -57,7 +81,7 @@
          
          
          
-         <input id="btn1" type="button" Onclick="window.location.href='index.xhtml'"
+         <input id="btn1" type="button" Onclick="window.location.href='adminMain.xhtml'"
                 value="Log In"/>
          <input id="write" type="text" />
          <input id="write1" type="text" />

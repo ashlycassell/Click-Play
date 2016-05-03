@@ -93,4 +93,29 @@ public class Order implements Serializable {
         this.totalPrice = totalPrice;
     }
 
+    //////////////////////Functionality///////////////////
+    public void getOrder() {
+
+    }
+
+    public void getOrders() {
+
+    }
+
+    public void creaeNewOrder() {
+
+    }
+
+    public void removeOrder() {
+
+    }
+
+    public void updateOrder() {
+
+    }
+
+    public void updateOrderStatus() {
+
+    }
+
 }
