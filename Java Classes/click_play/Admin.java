@@ -1,6 +1,7 @@
 package click_play;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -10,6 +11,8 @@ public class Admin implements Serializable {
 
     private String userName;
     private String password;
+
+    MySqlConnection aConnection = new MySqlConnection();
 
     public Admin() {
 
@@ -27,7 +30,7 @@ public class Admin implements Serializable {
 
     }
 
-    public void addMovie() {
+    public void addMovie() throws SQLException {
 
     }
 
