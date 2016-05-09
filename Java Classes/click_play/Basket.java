@@ -12,8 +12,9 @@ import javax.inject.Named;
 @SessionScoped
 public class Basket implements Serializable {
 
-    private List<Movie> basketList = new ArrayList<>();
-    private double totalPrice;
+    private List<Movie> basketList = new ArrayList<Movie>();
+    private int quantity = 0;
+    private double totalPrice = 0;
 
     public Basket() {
 
@@ -25,6 +26,14 @@ public class Basket implements Serializable {
 
     public void setBasketList(List<Movie> basketList) {
         this.basketList = basketList;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double getTotalPrice() {
@@ -41,16 +50,18 @@ public class Basket implements Serializable {
     }
 
     public void addToBasket(Movie m) {
-        totalPrice += m.getPrice();
         basketList.add(m);
+        totalPrice += m.getPrice();
     }
 
     public void updateItemInBasket() {
 
     }
 
-    public void removeItemFromBasket() {
-
+    public void removeItemFromBasket(Movie m) {
+        quantity--;
+        totalPrice -= quantity * m.getPrice();
+        basketList.remove(m);
     }
 
 }
