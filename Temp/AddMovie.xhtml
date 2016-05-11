@@ -7,30 +7,29 @@
         <title>Add Movie</title>
     </h:head>
     <h:body>
-        <h:form enctype="multipart/form-data">
-            Submit title: <h:inputText value="#{movie.title}" />
-            <br></br>
-            Submit category: <h:selectOneMenu value="#{movie.category}">
-                <f:selectItem itemLabel="Action" itemValue="Action" />
-                <f:selectItem itemLabel="Cartoon" itemValue="Cartoon" />
-                <f:selectItem itemLabel="Comedy" itemValue="Comedy" />
-                <f:selectItem itemLabel="Crime" itemValue="Crime" />
-                <f:selectItem itemLabel="Documentary" itemValue="Documentary" />
-                <f:selectItem itemLabel="Drama" itemValue="Drama" />
-                <f:selectItem itemLabel="Horror" itemValue="Horror" />
-                <f:selectItem itemLabel="Romance" itemValue="Romance" />
-            </h:selectOneMenu>
-            <br></br>
-            Submit price: <h:inputText value="#{movie.price}" />
-            <br></br>
-            Submit description: <h:inputText value="#{movie.description}" />
-            <br></br>
-            Submit stock: <h:inputText value="#{movie.stock}" />
-            <br></br>
-
-            <h:commandButton value="Submit" action="#{movie.newMovie()}" />
-
-        </h:form>
+            <h:form enctype="multipart/form-data">
+                Submit title: <h:inputText value="Title#{movie.title}"/>
+                <br></br>
+                Submit category: <h:selectOneMenu value="#{movie.category}" >
+                    <f:selectItem itemLabel="Action" itemValue="Action" />
+                    <f:selectItem itemLabel="Cartoon" itemValue="Cartoon" />
+                    <f:selectItem itemLabel="Comedy" itemValue="Comedy" />
+                    <f:selectItem itemLabel="Crime" itemValue="Crime" />
+                    <f:selectItem itemLabel="Documentary" itemValue="Documentary" />
+                    <f:selectItem itemLabel="Drama" itemValue="Drama" />
+                    <f:selectItem itemLabel="Horror" itemValue="Horror" />
+                    <f:selectItem itemLabel="Romance" itemValue="Romance" />
+                </h:selectOneMenu>
+                <br></br>
+                Submit price: <h:inputText value="#{movie.price}" />
+                <br></br>
+                Submit description: <h:inputTextarea value="#{movie.description}" />
+                <br></br>
+                Submit stock: <h:inputText value="#{movie.stock}" />
+                <br></br>
+                Submit Image: <h:inputText value="Image url #{movie.image}" />
+                <h:commandButton value="Submit" action="#{movie.newMovie()}" />
+            </h:form>
     </h:body>
 </html>
 
